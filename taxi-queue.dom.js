@@ -64,5 +64,6 @@ taxiJoin.addEventListener('click', function() {
 
 departBtn.addEventListener('click', function() {
     taxiQueue.taxiDepart();
-    taxiCounter.innerText = taxiQueue.taxiDepart();
+    counter.innerText = taxiQueue.leaveQueue();
+    taxiCounter.innerText = taxiQueue.taxiQueueLength();
 });
