@@ -180,4 +180,10 @@ describe('The taxi queue app', function() {
 		assert.equal(15, taxiQueue.queueLengthx());
 
 	});
+
+	it('should be able to show the initialized count of people and contiune counting from the value passed from local storage to the factory', function() {
+		const taxiQueue = TaxiQueue(2);
+		taxiQueue.joinQueue();
+		assert.equal(taxiQueue.queueLength(), 3);
+	})
 });
