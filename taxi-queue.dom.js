@@ -17,13 +17,19 @@ const taxiQueue = TaxiQueue();
 // DOM events
 queueJoin.addEventListener('click', function() {
     counter.innerText = taxiQueue.joinQueue();
+    // local storage
+    localStorage.setItem('queueJoined', JSON.stringify(counter.innerText));
 });
 
 
 leaveQueue.addEventListener('click', function() {
     counter.innerText = taxiQueue.leaveQueue();
+    // local storage
+    localStorage.setItem('peopleLeft', JSON.stringify(counter.innerText));
 });
 
 taxiJoin.addEventListener('click', function() {
     taxiCounter.innerText = taxiQueue.joinTaxiQueue();
+    // local storage
+    localStorage.setItem('taxiJoined', JSON.stringify(taxiCounter.innerText));
 });
