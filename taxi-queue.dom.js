@@ -41,7 +41,9 @@ const taxiQueue = TaxiQueue(joined, peopleLeft, taxiCount);
 
 // DOM events
 queueJoin.addEventListener('click', function() {
-    counter.innerText = taxiQueue.joinQueue();
+    // first join the people queue and then get the length
+    taxiQueue.joinQueue();
+    counter.innerText = taxiQueue.queueLength();
     // local storage
     localStorage.setItem('queueJoined', JSON.stringify(counter.innerText));
 });
@@ -54,11 +56,13 @@ leaveQueue.addEventListener('click', function() {
 });
 
 taxiJoin.addEventListener('click', function() {
-    taxiCounter.innerText = taxiQueue.joinTaxiQueue();
+    taxiQueue.joinTaxiQueue()
+    taxiCounter.innerText = taxiQueue.taxiQueueLength();
     // local storage
     localStorage.setItem('taxiJoined', JSON.stringify(taxiCounter.innerText));
 });
 
 departBtn.addEventListener('click', function() {
     taxiQueue.taxiDepart();
+    taxiCounter.innerText = taxiQueue.taxiDepart();
 });
