@@ -1,11 +1,9 @@
-function TaxiQueue() {
-	let counter = 0;
-	let taxiCounter = 0;
+function TaxiQueue(joined, peopleLeft, taxiCount) {
+	let counter = joined || peopleLeft || 0;
+	let taxiCounter = taxiCount || 0;
 
 	function joinQueue() {
-		if (counter < 12) {
-			return Number(counter++);
-		}
+		return Number(counter++);
 	}
 
 	function leaveQueue() {
@@ -29,7 +27,10 @@ function TaxiQueue() {
 	}
 
 	function taxiDepart(){
-		
+		if (queueLength() >= 12 && taxiQueueLength() >= 1) {
+			counter -= 12;
+			taxiCounter -= 1;
+		}
 	}
 
 	return {
