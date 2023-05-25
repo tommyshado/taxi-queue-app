@@ -15,3 +15,4 @@
 <strong>Outputs :</strong>
 
 * the taxis leaves when there 12 people in the queue to fill the taxi
+* the taxis section in the UI counter variavle has to decrese by one when the taxi departs
