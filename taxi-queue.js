@@ -7,7 +7,7 @@ function TaxiQueue(joined, peopleLeft, taxiCount) {
 	}
 
 	function leaveQueue() {
-		if (counter !== 0) {
+		if (counter > 0) {
 			return Number(counter--);
 		} else {
 			return 0;
