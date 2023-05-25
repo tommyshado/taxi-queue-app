@@ -18,6 +18,7 @@ const departBtn = document.querySelector('.depart');
 // variables for queueJoined, leaveQueue and taxiCounter
 var joined = 0;
 var peopleLeft = 0;
+var taxiCount = 0;
 
 if (localStorage['queueJoined']) {
     counter.innerHTML = JSON.parse(localStorage.getItem('queueJoined'));
@@ -29,9 +30,14 @@ if (localStorage['peopleLeft']) {
     peopleLeft = leaveQueue.innerHTML;
 }
 
+if (localStorage['taxiJoined']) {
+    taxiCounter.innerHTML = JSON.parse(localStorage.getItem('taxiJoined'));
+    taxiCount = taxiCounter.innerHTML;
+}
+
 // create Factory Function instance
 
-const taxiQueue = TaxiQueue(joined, peopleLeft);
+const taxiQueue = TaxiQueue(joined, peopleLeft, taxiCount);
 
 // DOM events
 queueJoin.addEventListener('click', function() {
@@ -54,5 +60,5 @@ taxiJoin.addEventListener('click', function() {
 });
 
 departBtn.addEventListener('click', function() {
-    
+    taxiQueue.taxiDepart();
 });
