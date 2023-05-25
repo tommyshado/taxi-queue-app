@@ -56,7 +56,7 @@ leaveQueue.addEventListener('click', function() {
 });
 
 taxiJoin.addEventListener('click', function() {
-    taxiQueue.joinTaxiQueue()
+    taxiQueue.joinTaxiQueue();
     taxiCounter.innerText = taxiQueue.taxiQueueLength();
     // local storage
     localStorage.setItem('taxiJoined', JSON.stringify(taxiCounter.innerText));
