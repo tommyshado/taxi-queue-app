@@ -4,13 +4,11 @@ function TaxiQueue(joined, taxiCount) {
 	// create a function that return the incremented counter variable by one
 	function joinQueue() {
 		counter++
-		// return counter;
 	}
 	// create a function that return the decremented counter variable by one
 	function leaveQueue() {
 		if (counter > 0) {
 			counter--;
-			// return counter;
 		} else {
 			return 0;
 		}
@@ -18,7 +16,6 @@ function TaxiQueue(joined, taxiCount) {
 	// create a function that returns the incremented taxi counter variable
 	function joinTaxiQueue() {
 		taxiCounter++;
-		// return taxiCounter;
 	}
 	// return the queue length
 	function queueLength() {
