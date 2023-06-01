@@ -1,14 +1,21 @@
 function TaxiQueue(joined, taxiCount) {
 	let counter = joined || 0;
 	let taxiCounter = taxiCount || 0;
+
+
+	// messages
+	let messages = '';
+
 	// create a function that return the incremented counter variable by one
 	function joinQueue() {
 		counter++
+		messages = 'One person has joined the queue';
 	}
 	// create a function that return the decremented counter variable by one
 	function leaveQueue() {
 		if (counter > 0) {
 			counter--;
+			messages = 'One person has left the queue';
 		} else {
 			return 0;
 		}
@@ -16,6 +23,7 @@ function TaxiQueue(joined, taxiCount) {
 	// create a function that returns the incremented taxi counter variable
 	function joinTaxiQueue() {
 		taxiCounter++;
+		messages = 'One taxi has joined the queue';
 	}
 	// return the queue length
 	function queueLength() {
@@ -33,7 +41,12 @@ function TaxiQueue(joined, taxiCount) {
 			counter -= 12;
 			// decrement the taxi counter variable by 1
 			taxiCounter -= 1;
+			messages = 'One taxi has departed';
 		}
+	}
+
+	function getMessage() {
+		return messages;
 	}
 
 	return {
@@ -42,6 +55,7 @@ function TaxiQueue(joined, taxiCount) {
 		joinTaxiQueue,
 		queueLength,
 		taxiQueueLength,
-		taxiDepart
+		taxiDepart,
+		getMessage
 	}
 }

@@ -22,6 +22,15 @@ h2 {
 	border-radius: 0.1em;
 }
 
+.message {
+	text-align: center;
+	font-size: 4em;
+}
+
+.messageColor {
+	color: green;
+}
+
 .section {
 	flex: 1;
 	background-color: #457B9D;

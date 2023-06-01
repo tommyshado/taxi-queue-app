@@ -14,6 +14,8 @@ const taxiCounter = document.querySelector('.taxi_queue_count');
 // depart section references
 const departBtn = document.querySelector('.depart');
 
+// message element
+const message = document.querySelector('.message');
 
 // variables for queue, and taxiCounter
 var joined = 0;
@@ -38,6 +40,8 @@ queueJoin.addEventListener('click', function() {
     // first join the people queue and then get the length
     taxiQueue.joinQueue();
     counter.innerText = taxiQueue.queueLength();
+    message.innerHTML = taxiQueue.getMessage();
+    message.classList.add('messageColor');
     // local storage
     localStorage.setItem('queue', JSON.stringify(counter.innerText));
 });
@@ -46,11 +50,15 @@ queueJoin.addEventListener('click', function() {
 leaveQueue.addEventListener('click', function() {
     taxiQueue.leaveQueue();
     counter.innerText = taxiQueue.queueLength();
+    message.innerHTML = taxiQueue.getMessage();
+    message.classList.add('messageColor');
 });
 
 taxiJoin.addEventListener('click', function() {
     taxiQueue.joinTaxiQueue();
     taxiCounter.innerText = taxiQueue.taxiQueueLength();
+    message.innerHTML = taxiQueue.getMessage();
+    message.classList.add('messageColor');
     // local storage
     localStorage.setItem('taxi', JSON.stringify(taxiCounter.innerText));
 });
@@ -61,6 +69,8 @@ departBtn.addEventListener('click', function() {
     // updating the localStorage variable with the new queueLength
     localStorage['queue'] = taxiQueue.queueLength();
     taxiCounter.innerText = taxiQueue.taxiQueueLength();
+    message.innerHTML = taxiQueue.getMessage();
+    message.classList.add('messageColor');
     // updating the localStorage variable with the new taxiQueueLength
     localStorage['taxi'] = taxiQueue.taxiQueueLength();
 });
