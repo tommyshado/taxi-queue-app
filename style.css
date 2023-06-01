@@ -1,29 +1,45 @@
 body {
+	font-size: 16px;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	background-color: darkgray
+	background-color: #F1FAEE;
 }
 
+h1 {
+	text-align: center;
+	font-size: 4em;
+}
+
+h2 {
+	font-size: 3em;
+	text-align: center;
+}
 
 .count {
 	font-size: 4em;
 	padding: 0.1em;
 	border: 2px solid;
-	background-color: orchid;
+	background-color: #E63946;
 	border-radius: 0.1em;
 }
 
 .section {
 	flex: 1;
-	background-color: steelblue;
-	padding: 2em;
-	margin: 1em;
+	background-color: #457B9D;
+	padding: 2.5em;
+	margin: 2.5em;
 	border-radius: 0.5em;
 }
 
 button {
 	padding: 1em;
 	border-radius: 0.5em;
+	font-size: 1em;
 	font-weight: bold;
+	background-color: #A8DADC;
+}
+
+.buttons {
+	text-align: center;
 }
 
 @media (min-width: 768px) {
